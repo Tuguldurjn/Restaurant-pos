@@ -1,0 +1,32 @@
+package com.restaurant;
+
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
+import java.io.IOException;
+
+public class App extends Application {
+
+    @Override
+    public void start(Stage primaryStage) {
+        try {
+            // Нэвтрэх хэсгийн FXML файлыг дуудаж ачаалах
+            Parent root = FXMLLoader.load(getClass().getResource("/com/restaurant/login.fxml"));
+            Scene scene = new Scene(root);
+            
+            primaryStage.setTitle("Рестораны Кассын Систем - Нэвтрэх");
+            primaryStage.setScene(scene);
+            primaryStage.setResizable(false);
+            primaryStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+}
